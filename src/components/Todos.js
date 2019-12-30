@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 
 class Todos extends Component {
   render() {
-    console.log("ova e od app", this.props.todos);
     return this.props.todos.map(todo => (
       //   <h3>{ todo.title }</h3>
       <TodoItem key={todo.id} todo={todo} markComplete={this.props.markComplete} delTodo={this.props.delTodo} />
@@ -13,7 +12,9 @@ class Todos extends Component {
 }
 
 Todos.propTypes = {
-  todos: PropTypes.array.isRequired
+  todos: PropTypes.array.isRequired,
+  markComplete: PropTypes.func.isRequired,
+  delTodo: PropTypes.func.isRequired
 };
 
 export default Todos;
